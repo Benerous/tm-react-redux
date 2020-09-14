@@ -7,6 +7,27 @@
     height: 50px;
     padding: 20px;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.App-title {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.App-functionality {
+    /* padding: 20px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.App-new-item, .App-cart {
+    text-align: center;
+    margin: 20px;
 }
 
 .App-wrapper {
@@ -14,3 +35,8 @@
     flex-direction: row;
     margin-top: 10px;
 }
+
+a {
+    text-decoration: none;
+    color: white;
+};

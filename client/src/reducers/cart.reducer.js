@@ -10,17 +10,24 @@ function cartReducer(state = { cartItems: [] }, action) {
             return { cartItems: action.payload };
         case ADD_TO_CART:
             const item = action.payload;
-            const product = state.cartItems.find(x => x.product === item.product);
+            const product = state.cartItems.find(x => x.id === item.id);
             if (product) {
+                if (product.quantity < product.available) {
+                    // item.quantity = product.quantity + 1
+                    item.quantity = item.quantity;
+                }
+                else {
+                    item.quantity = item.quantity;
+                }
                 return {
                     cartItems: 
-                    state.cartItems.map(x => x.product === product.product ? item : x)}
+                    state.cartItems.map(x => x.id === product.id ? item : x)}
             }
             else {
                 return {cartItems: [...state.cartItems, item]}
             }
         case REMOVE_FROM_CART:
-            return { cartItems: state.cartItems.filter(item => item.product !== action.payload)};
+            return { cartItems: state.cartItems.filter(item => item.id !== action.payload)};
         default:
             return state;
     }

@@ -9,6 +9,10 @@
     align-content: flex-start;
 }
 
+.App-product-sort {
+    margin: 20px;
+}
+
 .product_list_item {
     display: block;
     padding: 20px;
