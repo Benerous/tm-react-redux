@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, connect} from 'react-redux';
-import { removeFromCart, addToCart } from '../../actions/cart.actions';
+import { removeFromCart, addToCart, deleteCart } from '../../actions/cart.actions';
+import { Link } from 'react-router-dom';
 
 import './cart.css';
 
 export function Cart(props) {
   const cartItems = props.cartItems;
   const dispatch = useDispatch();
-  const totalPrice = cartItems.reduce((sum, i) => sum += i.price * i.quantity, 0);
-  const totalItems = cartItems.reduce((sum, i) => sum += i.quantity, 0);
+  const [messageVisibility, setMessageVisibility] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
 
   useEffect(() => {
     return () => {
@@ -25,6 +27,10 @@ export function Cart(props) {
   };
 
   const submitHandler = () => {
+    setTotalPrice(cartItems.reduce((sum, i) => sum += i.price * i.quantity, 0));
+    setTotalItems(cartItems.reduce((sum, i) => sum += i.quantity, 0));
+    setMessageVisibility(true);
+    dispatch(deleteCart());
   }
 
   return (
@@ -34,7 +40,7 @@ export function Cart(props) {
         {
           cartItems.map((i, index) => (
             <div className="App-cart-item" key={index}>
-              <span>{i.name}</span>
+              <div>{i.name}</div>
               <span>
                 <span className="cart-item-price">{i.price}</span>
                 <span className="cart-item-quantity">
@@ -42,26 +48,32 @@ export function Cart(props) {
                   <button onClick={() => changeQtyHandler(i.id, i.quantity + 1)} disabled={i.quantity >= i.available}>+</button>
                   <button onClick={() => changeQtyHandler(i.id, i.quantity - 1)} disabled={i.quantity <= 1}>-</button>
                 </span>
-                <button className="cart-item-delete" onClick={() => removeHandler(i.id)}>Delete</button>
+                <span className="cart-item-price">{i.price * i.quantity}</span>
+                <span>
+                  <button className="cart-item-delete" onClick={() => removeHandler(i.id)}>Delete</button>
+                </span>
               </span>
             </div>
           ))
         }
-        </div>: <div className="App-cart">Your cart is empty </div>
+        </div> : <div className="App-cart" hidden={messageVisibility}>Your cart is empty ;(</div>
       }
-      <div>
+      <div hidden={!cartItems.length} className="App-button-next">
         <button onClick={() => submitHandler()}>
           Next
         </button>
       </div>
-      <div className="App-message">
-        <span>
+      <div className="App-message" hidden={!messageVisibility}>
+        <div>
           Items in cart: {totalItems}.
-        </span>
-        <span>
+        </div>
+        <div>
           Total price: {totalPrice}.
-        </span>
+        </div>
         Thank you for purchase!
+        <div>
+        <Link to='/products'>Back to shopping</Link>
+        </div>
       </div>
     </div>
   );

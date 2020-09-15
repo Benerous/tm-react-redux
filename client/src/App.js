@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -11,16 +11,11 @@ import ProductList from './containers/product-list';
 import './App.css';
 
 export default function App(props) {
-  // this.state = {activeComponent: 'product-list'};
-  // this.changeNavigation = this.changeNavigation.bind(this);
-
-  // const changeNavigation = (prop) => {
-  //   this.setState({activeComponent: prop});
-  // }
-
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart;
   const cartQuantity = cartItems.reduce((sum, i) => sum += i.quantity, 0);
+
+  const [formVisibility, setFormVisibility] = useState(false);
 
   useEffect(() => {
     return () => {
@@ -36,14 +31,14 @@ export default function App(props) {
               <h1 className="App-title">My simple shop</h1>
             </Link>
             <span className="App-functionality">
-              <button className="App-new-item">New Product</button>
+              <button className="App-new-item" onClick={() => setFormVisibility(true)}><Link to='/products'>New Product</Link></button>
               <Link to='/cart' className="App-cart">Cart {cartQuantity}</Link>
             </span>
           </header>
           <div className="App-wrapper">
             <SideBar />
-            {/* <Route path='/' exact component={} /> */}
-            <Route path='/products' render={() => <ProductList cartItems={cartItems} />} />
+            <Route path="/" exact><span>Navigate to Product list to start shopping ;)</span></Route>
+            <Route path='/products' render={() => <ProductList cartItems={cartItems} formVisibility={formVisibility} setFormVisibility={setFormVisibility}/>} />
             <Route path='/cart' render={() => <Cart cartItems={cartItems} />} />
           </div>
         </div>

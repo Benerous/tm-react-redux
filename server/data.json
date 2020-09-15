@@ -1,62 +1,140 @@
 [
-    {
-        "id": "1",
-        "name": "iPhone 4s",
-        "price": 200,
-        "available": 2
-    },
-    {
-        "id": "2",
-        "name": "Nokia 2110",
-        "price": 600,
-        "available": 0
-    },
-    {
-        "id": "3",
-        "name": "Samsung s3",
-        "price": 345,
-        "available": 2
-    },
-    {
-        "id": "4",
-        "name": "LG G2",
-        "price": 90,
-        "available": 1
-    },
-    {
-        "id": "5",
-        "name": "Nokia 9930",
-        "price": 250,
-        "available": 3
-    },
-    {
-        "id": "6",
-        "name": "iPhone X",
-        "price": 123,
-        "available": 4
-    },
-    {
-        "id": "7",
-        "name": "Meizu m9",
-        "price": 656,
-        "available": 23
-    },
-    {
-        "id": "8",
-        "name": "Sonny 9",
-        "price": 564,
-        "available": 234
-    },
-    {
-        "id": "9",
-        "name": "iPhone 6 plus",
-        "price": 434,
-        "available": 7
-    },
-    {
-        "id": "10",
-        "name": "Alcatel noname",
-        "price": 123,
-        "available": 7
-    }
+   {
+      "id": "42zpn244kf452hxl",
+      "name": "Samsung s2",
+      "price": 75,
+      "available": 0
+   },
+   {
+      "id": "42zpn94gkf44y44t",
+      "name": "iPhone 5s",
+      "price": 100,
+      "available": 5
+   },
+   {
+      "id": "42zpnb08kf452akx",
+      "name": "Samsung s3",
+      "price": 125,
+      "available": 8
+   },
+   {
+      "id": "42zpn6ykkf452v2v",
+      "name": "Samsung A300",
+      "price": 145,
+      "available": 5
+   },
+   {
+      "id": "42zpn59ckf44yelq",
+      "name": "iPhone 6s",
+      "price": 150,
+      "available": 15
+   },
+   {
+      "id": "42zpn12gkf44ym1a",
+      "name": "iPhone 7",
+      "price": 175,
+      "available": 8
+   },
+   {
+      "id": "42zpn130kf452qdd",
+      "name": "Samsung A310",
+      "price": 176,
+      "available": 3
+   },
+   {
+      "id": "42zpna44kf44yv50",
+      "name": "iPhone 7 Plus",
+      "price": 200,
+      "available": 12
+   },
+   {
+      "id": "42zpn5ugkf44zotx",
+      "name": "Nokia 535",
+      "price": 232,
+      "available": 8
+   },
+   {
+      "id": "42zpn1jskf44zafj",
+      "name": "iPhone 8",
+      "price": 239,
+      "available": 16
+   },
+   {
+      "id": "42zpna8wkf44z2n3",
+      "name": "iPhone 8 Plus",
+      "price": 245,
+      "available": 15
+   },
+   {
+      "id": "42zpn32kkf45097f",
+      "name": "Xiaomi 5",
+      "price": 250,
+      "available": 0
+   },
+   {
+      "id": "42zpnpgkf45050b",
+      "name": "Xiaomi 5 Plus",
+      "price": 250,
+      "available": 1
+   },
+   {
+      "id": "42zpn9pskf4531p9",
+      "name": "Samsung A800",
+      "price": 265,
+      "available": 8
+   },
+   {
+      "id": "42zpn3ygkf450fmw",
+      "name": "Redmi 4",
+      "price": 289,
+      "available": 2
+   },
+   {
+      "id": "42zpn7dokf450s4e",
+      "name": "iPhone 11",
+      "price": 350,
+      "available": 7
+   },
+   {
+      "id": "42zpnankkf451yqg",
+      "name": "Lenovo 8",
+      "price": 354,
+      "available": 6
+   },
+   {
+      "id": "42zpn5qgkf45166m",
+      "name": "iPhone 11 Pro",
+      "price": 430,
+      "available": 20
+   },
+   {
+      "id": "42zpnajskf451grr",
+      "name": "iPad Pro",
+      "price": 500,
+      "available": 4
+   },
+   {
+      "id": "42zpn9f8kf45v4l5",
+      "name": "iPhone X",
+      "price": 500,
+      "available": 6
+   },
+   {
+      "id": "42zpn5lkkf4525sd",
+      "name": "Samsung s20",
+      "price": 550,
+      "available": 9
+   },
+   {
+      "id": "42zpn8sokf4537fv",
+      "name": "Samsung A10",
+      "price": 560,
+      "available": 0
+   },
+   {
+      "id": "42zpn124kf46g1ve",
+      "name": "iPhone XR",
+      "price": 345,
+      "available": 12
+   }
 ]

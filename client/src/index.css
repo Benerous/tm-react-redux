@@ -3,3 +3,13 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+button, input, select {
+  padding: 5px;
+  margin: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+};
