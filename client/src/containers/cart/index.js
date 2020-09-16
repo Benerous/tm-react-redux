@@ -42,13 +42,13 @@ export function Cart(props) {
             <div className="App-cart-item" key={index}>
               <div>{i.name}</div>
               <span>
-                <span className="cart-item-price">{i.price}</span>
+                <span className="cart-item-price">Price: {i.price}</span>
                 <span className="cart-item-quantity">
                   <input min='0' max={i.available} value={i.quantity <= i.available ? i.quantity : i.quantity - 1} readOnly/>
                   <button onClick={() => changeQtyHandler(i.id, i.quantity + 1)} disabled={i.quantity >= i.available}>+</button>
                   <button onClick={() => changeQtyHandler(i.id, i.quantity - 1)} disabled={i.quantity <= 1}>-</button>
                 </span>
-                <span className="cart-item-price">{i.price * i.quantity}</span>
+                <span className="cart-item-price">Total: {i.price * i.quantity}</span>
                 <span>
                   <button className="cart-item-delete" onClick={() => removeHandler(i.id)}>Delete</button>
                 </span>
