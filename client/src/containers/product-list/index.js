@@ -58,7 +58,7 @@ export function ProductList(props) {
     <div>
       <dialog open={formVisibility}>
         <form action='/api/products/' method="POST" onSubmit={(e) => {e.preventDefault(); addNewProductHandler(e)}}>
-          <input type="name" name="name" placeholder="Name" required/>
+          <input type="name" name="name" placeholder="Name" maxLength="35" required/>
           <input type="number" name="price" min="1" placeholder="Price" required/>
           <input type="number" name="availableCount" placeholder="Available count" min="0" required/>
           <input type="submit" value="Create New" />

@@ -9,21 +9,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vdanyliv/redux-start.git"
+    "url": "git+https://github.com/Benerous/tm-react-redux.git"
   },
   "author": "Bohdan Vyshynskyi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vdanyliv/redux-start/issues"
+    "url": "https://github.com/Benerous/tm-react-redux/issues"
   },
-  "homepage": "https://github.com/vdanyliv/redux-start#readme",
+  "homepage": "https://github.com/Benerous/tm-react-redux#readme",
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "js-cookie": "^2.2.1",
     "uniqid": "^5.2.0"
   }
 }

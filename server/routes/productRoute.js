@@ -5,31 +5,36 @@ const uniqid = require('uniqid');
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-    if (req.query.productId) {
-        const id = req.query.productId;
-        const product = data.find(i => i.id === id);
-        return res.send(product);
+router.get('/', async (req, res, next) => {
+    try {
+        if (req.query.productId) {
+            const id = req.query.productId;
+            const product = await data.find(i => i.id === id);
+            return res.send(product);
+        }
+        const sortType = req.query.sortBy;
+        const sortedData = await sortData(data, sortType)
+        return res.send(sortedData);
+    } catch(error) {
+        next(error);
     }
-    const sortType = req.query.sortBy;
-    return res.send(sortData(data, sortType));
 });
 
-router.post('/', (req, res) => {
-    const test = {
+router.post('/', async (req, res, next) => {
+    const newProduct = {
         'id': uniqid(),
         'name': req.body.name,
         'price': +req.body.price,
         'available': +req.body.available
     };
-    const updatedData = [...data, test];
-    const newData = JSON.stringify(updatedData, null, 3);
+    const updatedData = [...data, newProduct];
+    const newData = await JSON.stringify(updatedData, null, 3);
     try {
-        fs.writeFileSync(__dirname + '/../data.json', newData);
+        await fs.writeFileSync(__dirname + '/../data.json', newData);
     } catch(error) {
-        console.log(error);
+        next(error);
     }
-    res.end();
+    res.send(newProduct);
 });
 
 const sortData = (array, sortingType) => {
