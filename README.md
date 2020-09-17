@@ -46,7 +46,7 @@ List of features:
 * editing cart page (delete product from cart, change q-ty)
 * submiting cart (message with total price)
 
-To-do list of improvements:
+## To-do list of improvements:
 * UI improvements
 * connecting to real DB (MyQSL, MongoDB, etc.)
 * API calls testing
